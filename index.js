@@ -72,9 +72,6 @@ buscadorForm.addEventListener("submit", function (event) {
       resultadoDiv.textContent = "No se encontró ninguna pizza, proba ingresando otro número";
     }
   } 
-  else {
-    resultadoDiv.textContent = "Por favor, ingresa un número entre el 1 y 5.";
-  }
 });
 
 
