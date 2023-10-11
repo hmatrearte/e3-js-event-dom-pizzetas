@@ -58,26 +58,22 @@ buscadorForm.addEventListener("submit", function (event) {
 
   if (!isNaN(id)) {
     const pizzaEncontrada = pizzas.find((pizza) => pizza.id === id);
-
-    // Limpia el contenido del div de resultado
     resultadoDiv.innerHTML = "";
 
     if (pizzaEncontrada) {
-      // Pizza encontrada
       const pizzaElement = document.createElement("div");
-      pizzaElement.innerHTML = `
-        <h2>${pizzaEncontrada.nombre}</h2>
+      pizzaElement.innerHTML = 
+        `<h2>${pizzaEncontrada.nombre}</h2>
         <p>Precio: $${pizzaEncontrada.precio}</p>
-        <img src="${pizzaEncontrada.imagen}" alt="${pizzaEncontrada.nombre}" width="150">
-      `;
+        <img src="${pizzaEncontrada.imagen}" alt="${pizzaEncontrada.nombre}" width="150">`;
       resultadoDiv.appendChild(pizzaElement);
-    } else {
-      // No se encontró la pizza con el ID ingresado
-      resultadoDiv.textContent = "No se encontró ninguna pizza con el ID ingresado.";
+    } 
+    else {
+      resultadoDiv.textContent = "No se encontró ninguna pizza, proba ingresando otro número";
     }
-  } else {
-    // El valor ingresado no es un número
-    resultadoDiv.textContent = "Por favor, ingresa un número válido.";
+  } 
+  else {
+    resultadoDiv.textContent = "Por favor, ingresa un número entre el 1 y 5.";
   }
 });
 
